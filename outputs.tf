@@ -1,3 +1,7 @@
+output "iotcentral_organizations_id" {
+  description = "Map of id values across all iotcentral_organizations, keyed the same as var.iotcentral_organizations"
+  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.id }
+}
 output "iotcentral_organizations_display_name" {
   description = "Map of display_name values across all iotcentral_organizations, keyed the same as var.iotcentral_organizations"
   value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.display_name }
