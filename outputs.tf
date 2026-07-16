@@ -1,21 +1,21 @@
 output "iotcentral_organizations_id" {
   description = "Map of id values across all iotcentral_organizations, keyed the same as var.iotcentral_organizations"
-  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.id }
+  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.id if v.id != null && length(v.id) > 0 }
 }
 output "iotcentral_organizations_display_name" {
   description = "Map of display_name values across all iotcentral_organizations, keyed the same as var.iotcentral_organizations"
-  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.display_name }
+  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.display_name if v.display_name != null && length(v.display_name) > 0 }
 }
 output "iotcentral_organizations_iotcentral_application_id" {
   description = "Map of iotcentral_application_id values across all iotcentral_organizations, keyed the same as var.iotcentral_organizations"
-  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.iotcentral_application_id }
+  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.iotcentral_application_id if v.iotcentral_application_id != null && length(v.iotcentral_application_id) > 0 }
 }
 output "iotcentral_organizations_organization_id" {
   description = "Map of organization_id values across all iotcentral_organizations, keyed the same as var.iotcentral_organizations"
-  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.organization_id }
+  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.organization_id if v.organization_id != null && length(v.organization_id) > 0 }
 }
 output "iotcentral_organizations_parent_organization_id" {
   description = "Map of parent_organization_id values across all iotcentral_organizations, keyed the same as var.iotcentral_organizations"
-  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.parent_organization_id }
+  value       = { for k, v in azurerm_iotcentral_organization.iotcentral_organizations : k => v.parent_organization_id if v.parent_organization_id != null && length(v.parent_organization_id) > 0 }
 }
 
